@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+    {% block contenido %}
+    <h1>ver detalle de Animal</h1>
+    
+    <p>{{ detalle.id }}</p>
+    <p>{{ detalle.nombre }}</p>
+    <p>{{ detalle.descripcion }}</p>   
+        
+    <a href="{% url 'vista_lista_animales' %}">Regresar a Animales</a>
+
+    {% endblock contenido %}

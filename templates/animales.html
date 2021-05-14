@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+    {% block contenido %}
+        <h1>Animales</h1>
+        <a href="{% url 'vista_agregar_animal' %}" class="btn btn-primary">Agregar Animal</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for a in animales %}
+                    <tr>
+                        <td>{{ a.id }}</td>
+                        <td>{{ a.nombre }}</td>
+                        <td>{{ a.descripcion }}</td>
+                        <td>
+                            <a href="{% url 'vista_ver_animal' id_animal=a.id %}" class="btn btn-info">Ver</a>        
+                            <a href="{% url 'vista_eliminar_animal' id_animal=a.id %}" class="btn btn-danger">Eliminar</a>        
+                            <a href="{% url 'vista_editar_animal' id_animal=a.id %}" class="btn btn-warning">Editar</a>                            
+                        </td>
+                        
+                    </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    {% endblock contenido%}
