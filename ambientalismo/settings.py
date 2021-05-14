@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'ambientalismo.wsgi.application'
 #}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dfk1k8sl6val9i',
         'USER': 'jsxkvkloxqlitm',
         'PASSWORD':'aa5add40cfbecec14d03c70702429dbdaf90dab4c2ae3f6dbe55cd0ecbe9916b',
