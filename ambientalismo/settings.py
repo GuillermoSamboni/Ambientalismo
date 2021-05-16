@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pmmh*#d@a=71d&(b%cu1k(8$n&l%k^kn8m+^_8qa==zllo%#u_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ambientalismo.herokuapp.com']
+ALLOWED_HOSTS = ['ambientelugares.herokuapp.com']
 
 
 # Application definition
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ambientalismo.urls'
+ROOT_URLCONF = 'ambientelugares.urls'
 
 TEMPLATES = [
     {
@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'ambientalismo.wsgi.application'
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dfk1k8sl6val9i',
-        'USER': 'jsxkvkloxqlitm',
-        'PASSWORD':'aa5add40cfbecec14d03c70702429dbdaf90dab4c2ae3f6dbe55cd0ecbe9916b',
-        'HOST':'ec2-54-166-167-192.compute-1.amazonaws.com',
+        'NAME': 'da55avotqkg475',#dfk1k8sl6val9i
+        'USER': 'caqjvcmndlqqay',#jsxkvkloxqlitm
+        'PASSWORD':'69e2f1e59b9c5fcca68f77594b7765f6a84c91ec2345e60a3ec5b5d1286494bb',#aa5add40cfbecec14d03c70702429dbdaf90dab4c2ae3f6dbe55cd0ecbe9916b
+        'HOST':'ec2-18-215-111-67.compute-1.amazonaws.com',#ec2-54-166-167-192.compute-1.amazonaws.com
         'PORT':'5432',
     }
 }
