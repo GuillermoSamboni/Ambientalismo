@@ -30,4 +30,7 @@ urlpatterns=[
     path('eliminar_noticia/<int:id_noticia>', vista_eliminar_noticia, name='vista_eliminar_noticia'),
     path('editar_noticia/<int:id_noticia>', vista_editar_noticia, name='vista_editar_noticia'),
 
+    path('login/', vista_login, name="vista_login"),
+    path('logout/', vista_logout, name="vista_logout"),
+
     ]

@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
 from .forms import *
 from .models import *
+
+
 
 # Create your views here.
 def vista_about(request):
@@ -133,3 +136,27 @@ def vista_editar_noticia(request, id_noticia):
         formulario= agregar_noticia_form(instance= objeto)
 
     return render(request, 'agregarNoticia.html', locals())
+
+
+#login
+def vista_login(request):  
+    user=''
+    passw=''  
+    if request.method=='POST':
+        formulario= iniciar_sesion_form(request.POST)
+        if formulario.is_valid():
+            user=formulario.cleaned_data['usuario']
+            passw=formulario.cleaned_data['clave']
+            usuario=authenticate(username=user, password=passw)
+            if usuario is not None and usuario.is_active:
+                login(request, usuario)
+                return redirect('/')
+            else:
+                msj="usuario o clave incorrectos"
+    else:
+        formulario=iniciar_sesion_form()
+    return render(request, 'login.html', locals())
+#logout
+def vista_logout(request):
+    logout(request)
+    return redirect('/login/')

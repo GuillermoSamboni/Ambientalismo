@@ -20,3 +20,7 @@ class agregar_noticia_form(forms.ModelForm):
     class Meta:
         model= Noticia
         fields='__all__'
+
+class iniciar_sesion_form(forms.Form):
+    usuario=forms.CharField(widget=forms.TextInput())
+    clave=forms.CharField(widget=forms.PasswordInput(render_value=False))

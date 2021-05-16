@@ -2,7 +2,10 @@
 
     {% block contenido %}
         <h1>Animales</h1>
-        <a href="{% url 'vista_agregar_animal' %}" class="btn btn-primary">Agregar Animal</a>
+
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+            <a href="{% url 'vista_agregar_animal' %}" class="btn btn-primary">Agregar Animal</a>
+        {% endif %}
         <table class="table">
             <thead>
             <tr>
@@ -26,8 +29,11 @@
                         </td>
                         <td>
                             <a href="{% url 'vista_ver_animal' id_animal=a.id %}" class="btn btn-info">Ver</a>        
-                            <a href="{% url 'vista_eliminar_animal' id_animal=a.id %}" class="btn btn-danger">Eliminar</a>        
-                            <a href="{% url 'vista_editar_animal' id_animal=a.id %}" class="btn btn-warning">Editar</a>                            
+                            {% if request.user.is_authenticated and request.user.is_superuser %}
+                                <a href="{% url 'vista_eliminar_animal' id_animal=a.id %}" class="btn btn-danger">Eliminar</a>        
+                                <a href="{% url 'vista_editar_animal' id_animal=a.id %}" class="btn btn-warning">Editar</a>                                        
+                            {% endif %}
+                            
                         </td>
                         
                     </tr>

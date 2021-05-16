@@ -33,6 +33,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'vista_contacto' %}">Contacto</a>
                 </li>
+                {% if request.user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'vista_logout' %}">Cerrar sesion</a>
+                  </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'vista_login' %}">Iniciar Sesion</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link" href="">{{ request.user.username }}</a>
+                </li>            
               </ul>
             </div>
           </div>   
