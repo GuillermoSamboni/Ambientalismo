@@ -1,21 +1,17 @@
 {% extends 'base.html' %}
 
-    {% block titulo %}
-        sobre nosostros
-    {% endblock titulo %}
-
     {% block contenido %}
-    <h1>contacto site</h1>
+    <h1>Ponte en contacto con nosotros y dejanos saber tus sugerencias</h1>
     {% if info_enviado %}
     <h2>La informacion suministrada es</h2>
         {{ email }}
         {{ title }}
         {{ text }}
     {% else %}
-        <form action="" method="POST">
+        <form action="" method="POST" class="form-cont">
             {% csrf_token %}
-            {{ formulario.as_p }}
-            <input type="submit" value="submit">
+            <p>{{ formulario.as_p }}</p>
+            <input type="submit" value="submit" class="btn btn-primary">
         </form>
     {% endif %}
 

@@ -4,6 +4,7 @@ from .models import *
 
 # Create your views here.
 def vista_about(request):
+    noticias= Noticia.objects.filter() #SELECT FROM *
     return render(request, 'about.html', locals())
 #vista contacto
 def vista_contacto(request):
@@ -30,7 +31,7 @@ def vista_lista_lugares(request):
 #vista agregar un nuevo lugar
 def vista_agregar_lugar(request):
     if request.method =='POST':
-        formulario=agregar_lugar_form(request.POST)
+        formulario=agregar_lugar_form(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.save()
             return redirect('/lugares/')
@@ -67,7 +68,7 @@ def vista_lista_animales(request):
 #vista de agregar un nuevo animal
 def vista_agregar_animal(request):
     if request.method=='POST':
-        formulario=agregar_animal_form(request.POST)
+        formulario=agregar_animal_form(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.save()
             return redirect('/animales/')
@@ -104,12 +105,12 @@ def vista_lista_noticias(request):
 #vista de agregar un nuevo NOTICIA
 def vista_agregar_noticia(request):
     if request.method=='POST':
-        formulario=agregar_noticia_form(request.POST)
+        formulario=agregar_noticia_form(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.save()
             return redirect('/noticias/')
     else:
-        formulario=agregar_animal_form()
+        formulario=agregar_noticia_form()
     return render(request, 'agregarNoticia.html', locals())
 #vista de una solo noticia por su id
 def vista_ver_noticia(request, id_noticia):

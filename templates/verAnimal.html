@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
     {% block contenido %}
-    <h1>ver detalle de Animal</h1>
+    <div class="detalle">
+        <h1>{{ detalle.nombre }}</h1>
+        <video class="video-cont" autoplay controls src="/media/{{ a.video}}" ></video>
+        <h2>DESCRIPCION</h2>
+        <p>{{ detalle.descripcion }}</p>  
+        <a class="btn btn-warning" href="{% url 'vista_lista_animales' %}">Regresar a Animales</a>
+    </div>
     
-    <p>{{ detalle.id }}</p>
-    <p>{{ detalle.nombre }}</p>
-    <p>{{ detalle.descripcion }}</p>   
-        
-    <a href="{% url 'vista_lista_animales' %}">Regresar a Animales</a>
-
     {% endblock contenido %}

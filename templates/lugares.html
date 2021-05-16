@@ -6,9 +6,10 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">id</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">foto</th>
+                <th scope="col">video</th>
                 <th scope="col">localizacion</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -16,9 +17,13 @@
             <tbody>
                 {% for l in lugares %}
                     <tr>
-                        <td>{{ l.id }}</td>
-                        <td>{{ l.nombre }}</td>
-                        <td>{{ l.descripcion }}</td>
+                        <td class="nombre">{{ l.nombre }}</td>
+                        <td class="descript">{{ l.descripcion }}</td>
+                        <td class="foto">                    
+                            <img src="/media/{{ l.foto }}" alt="">
+                        </td>
+                        <td class="video">
+                            <video class="video-cont" autoplay controls src="/media/{{ l.video}}" ></video>                        </td>                        
                         <td>{{ l.localizacion }}</td>
                         <td>
                             <a href="{% url 'vista_ver_lugar' id_lugar=l.id %}" class="btn btn-info">Ver</a>        

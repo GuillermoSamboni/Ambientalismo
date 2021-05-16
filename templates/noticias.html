@@ -5,24 +5,28 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">id</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Video</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="tdbody-container">
                 {% for n in noticias %}
-                    <tr>
-                        <td>{{ n.id }}</td>
-                        <td>{{ n.nombre }}</td>
-                        <td>{{ n.descripcion }}</td>
+                    <tr>                    
+                        <td class="nombre">{{ n.nombre }}</td>                        
+                        <td class="descript">{{ n.descripcion }}</td>
+                        <td class="foto">                    
+                            <img src="/media/{{ n.foto }}"  alt="">
+                        </td>
+                        <td class="video">
+                            <video class="video-cont" autoplay controls src="/media/{{ n.video}}" ></video>
+                        </td>
                         <td>                            
                             <a href="{% url 'vista_ver_noticia' id_noticia=n.id %}" class="btn btn-info">Ver</a>        
                             <a href="{% url 'vista_eliminar_noticia' id_noticia=n.id %}" class="btn btn-danger">Eliminar</a>        
                             <a href="{% url 'vista_editar_noticia' id_noticia=n.id %}" class="btn btn-warning">Editar</a>        
-                                                
-
                         </td>
                     </tr>
                 {% endfor %} 

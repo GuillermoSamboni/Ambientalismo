@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
     {% block contenido %}
-    <h1>ver detalle de lugar</h1>
-    
-    <p>{{ detalle.id }}</p>
-    <p>{{ detalle.nombre }}</p>
-    <p>{{ detalle.descripcion }}</p>
-    <p>{{ detalle.localizacion }}</p>
-   
-    <a href="{% url 'vista_lista_lugares' %}">Regresar a Lugares</a>
+    <div class="detalle">
+        <h1>{{ detalle.nombre }}</h1>
+        <video class="video-cont" autoplay controls src="/media/{{ a.video}}" ></video>
+        <h2>DESCRIPCION</h2>
+        <p>{{ detalle.descripcion }}</p>
+        <p>{{ detalle.localizacion }}</p>
+        <a class="btn btn-warning" href="{% url 'vista_lista_lugares' %}">Regresar a Lugares</a>
 
+    </div>
+   
     {% endblock contenido %}
