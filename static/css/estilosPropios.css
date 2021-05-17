@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+.logo img{
+    border-radius: 10px;
+}
 
 .container-about{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 80vh; 
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -37,8 +39,6 @@ h1{
     text-align: center;
     color: rgb(214, 198, 198);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 10px;
-
 }
 h2{
     color: rgb(255, 255, 255);
@@ -69,7 +69,6 @@ img{
 }
 .tdbody-container
 .foto{
-    color: rgb(59, 110, 9);
     width: 10%;
 }
 .tdbody-container
@@ -78,38 +77,55 @@ img{
 }
 
 video{
-    width: 100%;
-    
+    width: 100%;    
     border-radius: 20px;
 }
 p{
     color: rgb(250, 248, 248);
 }
+/*solo contacto*/
 form{
     background-image: url('../img/form.jpg');
     background-repeat: no-repeat;
     background-position: center;
     margin: 10px;
     border-radius: 10px;
-}
-.form-cont{
     text-align: center;
 }
 
+#form-iniciar-sesion{
+    background-image: url('../img/moon.jpg');
+    text-align: center;
+}
+form
+#form-iniciar-sesion{
+    width: 50%;
+}
 .detalle{
     text-align: center;
 }
-footer{
-    margin-top:50px;
-    width:100%;
-    height:200px;
-    background-color:red;
+footer,
+.footer{
+    width:90%;
+    background-color: aqua;
 }
 @media screen and (max-width: 780px){
     body{
         background-image: url('../img/tree.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+    } 
+    #nav li{
+        float: none;
+        display: block;
     }
-    .btn {
-        background-color: chartreuse;
-    }
+    #nav li a{
+        padding: 5%;
+        text-align: left;
+        width: 100%;
+    }  
+    .myicono{
+        display: block;
+        text-align: right;
+    } 
 }

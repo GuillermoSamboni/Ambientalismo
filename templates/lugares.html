@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+    {% block titulo %}
+    <title>Lugares</title>
+    {% endblock titulo %}
 
     {% block contenido %}
         <h1>Lugares</h1>
         {% if request.user.is_authenticated and request.user.is_superuser %}
-            <a href="{% url 'vista_agregar_lugar' %}" class="btn btn-primary">Agregar Lugar</a>
+            <h1>
+                <a href="{% url 'vista_agregar_lugar' %}" class="btn btn-primary">Agregar Lugar</a>
+            </h1>
         {% endif %}
 
         <table class="table">
@@ -26,7 +31,8 @@
                             <img src="/media/{{ l.foto }}" alt="">
                         </td>
                         <td class="video">
-                            <video class="video-cont" autoplay controls src="/media/{{ l.video}}" ></video>                        </td>                        
+                            <video class="video-cont" autoplay controls src="/media/{{ l.video}}" ></video>
+                        </td>
                         <td>{{ l.localizacion }}</td>
                         <td>
                             <a href="{% url 'vista_ver_lugar' id_lugar=l.id %}" class="btn btn-info">Ver</a>
@@ -34,8 +40,7 @@
                                 <a href="{% url 'vista_eliminar_lugar' id_lugar=l.id %}" class="btn btn-danger">Eliminar</a>        
                                 <a href="{% url 'vista_editar_lugar' id_lugar=l.id %}" class="btn btn-warning">Editar</a>                
                             {% endif %}                           
-                        </td>
-                            
+                        </td>                            
                     </tr>
                 {% endfor %} 
             </tbody>

@@ -177,7 +177,7 @@ def vista_register(request):
             password_2=formulario.cleaned_data['confirmar']
             u=User.objects.create_user(username=usuario, email=correo, password=password_1)
             u.save()
-            return redirect('/login/')
+            return render(request, 'gracias_por_registrarse.html' , locals())
         else:
             return render(request, 'register.html', locals())
     return render(request,'register.html', locals())

@@ -5,6 +5,9 @@
         <h1>{{ detalle.nombre }}</h1>
         <video autoplay controls src="/media/{{ n.video }}"></video>                                      
         <h2>DESCRIPCION</h2>
+        <p class="foto">                   
+            <img src="/media/{{ n.foto }}"  alt="">
+        </p>
         <p>{{ detalle.descripcion }}</p>
         <a class="btn btn-warning" href="{% url 'vista_lista_noticias' %}">Regresar a Noticias</a>
 
