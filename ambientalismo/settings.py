@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pmmh*#d@a=71d&(b%cu1k(8$n&l%k^kn8m+^_8qa==zllo%#u_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []#'lugaresincreibles.herokuapp.com'
+ALLOWED_HOSTS = ['lugaresincreibles.herokuapp.com']
 
 # Application definition
 
@@ -76,27 +76,27 @@ WSGI_APPLICATION = 'ambientalismo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-DATABASES = {
-   'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'ambientalismo3',
-    'USER': 'root',
-    'PASSWORD':'',
-    'HOST':'127.0.0.1',
-    'PORT':'3306',
-    }
-}
-
 #DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'd9qlrkinca6lum',#dfk1k8sl6val9i
-#        'USER': 'uvfnejvihssrzh',#jsxkvkloxqlitm
-#        'PASSWORD':'7579017b98864d97bc8fd8f541f5bb16cef5a381c77769426d965ec449e11ea3',#aa5add40cfbecec14d03c70702429dbdaf90dab4c2ae3f6dbe55cd0ecbe9916b
-#        'HOST':'ec2-54-152-185-191.compute-1.amazonaws.com',#ec2-54-166-167-192.compute-1.amazonaws.com
-#        'PORT':'5432',
+#   'default': {
+#    'ENGINE': 'django.db.backends.mysql',
+#    'NAME': 'ambientalismo3',
+#    'USER': 'root',
+#    'PASSWORD':'',
+#    'HOST':'127.0.0.1',
+#    'PORT':'3306',
 #    }
 #}
+
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9qlrkinca6lum',#dfk1k8sl6val9i
+        'USER': 'uvfnejvihssrzh',#jsxkvkloxqlitm
+        'PASSWORD':'7579017b98864d97bc8fd8f541f5bb16cef5a381c77769426d965ec449e11ea3',#aa5add40cfbecec14d03c70702429dbdaf90dab4c2ae3f6dbe55cd0ecbe9916b
+        'HOST':'ec2-54-152-185-191.compute-1.amazonaws.com',#ec2-54-166-167-192.compute-1.amazonaws.com
+        'PORT':'5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -136,14 +136,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT="media"
 
-#STATIC_ROOT="static"
+STATIC_ROOT="static"
 
 
 # Default primary key field type
