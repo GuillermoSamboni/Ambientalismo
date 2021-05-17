@@ -95,14 +95,6 @@ form{
 .form-cont{
     text-align: center;
 }
-h1,
-.nombre-user{
-    background-color: brown;
-    color: blue;
-}
-#form-iniciar-sesion{
-    background-color: brown;
-}
 
 .detalle{
     text-align: center;
