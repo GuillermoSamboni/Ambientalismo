@@ -38,7 +38,7 @@ class register_user_form(forms.Form):
             u=User.objects.get(username=usuario)
         except User.DoesNotExist:
             return usuario
-        raise forms.validationError('Nombre de usuario ya registrado')
+        raise forms.ValidationError('Nombre de usuario ya registrado')
     
     def clean_correo(self):
         correo=self.cleaned_data['correo']
@@ -46,7 +46,7 @@ class register_user_form(forms.Form):
             correo=User.objects.get(email=correo)
         except User.DoesNotExist:
             return correo
-        raise forms.validationError('Este correo ya esta registrado')
+        raise forms.ValidationError('Este correo ya esta registrado')
     
     def clean_passwod(self):
         password_1=self.cleaned_data['password_1']
@@ -55,6 +55,4 @@ class register_user_form(forms.Form):
         if password_1==password_2:
             pass
         else:
-            raise forms.validationError('las contraseñas no coinciden')
-
-
+            raise forms.ValidationError('las contraseñas no coinciden')
