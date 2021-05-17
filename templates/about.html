@@ -4,7 +4,10 @@
     {% endblock titulo %}
 
     {% block contenido %}
-    <h1>Bienvenido</h1> 
+    <div class="nombre-user">
+        <h1>Bienvenido</h1>
+        <h1 class="">{{ request.user.username }}</h1>
+    </div>   
         {% for n in noticias %}        
             <header class="container-about">                                 
                     <div class="video-container">

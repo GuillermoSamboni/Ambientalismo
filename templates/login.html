@@ -3,14 +3,14 @@
     {% block contenido %}
     <h1>Iniciar Sesión</h1>
     {% if msj %}
-    <h2>La informacion suministrada es</h2>
         <h5>{{ msj }}</h5>
-    {% else %}
-        <form action="" method="POST" class="form-cont">
-            {% csrf_token %}
-            <p>{{ formulario.as_p }}</p>
-            <input type="submit" value="Iniciar Sesión" class="btn btn-primary">
-        </form>
+        {% else %}
+            <form action="" method="POST" class="form-cont" id="form-iniciar-sesion">
+                {% csrf_token %}
+                <p>{{ formulario.as_p }}</p>
+                <p><input type="submit" value="Iniciar Sesión" class="btn btn-primary"></p>
+                <p ><a href="{% url 'vista_register' %}">Registrarse</a></p>
+            </form>
     {% endif %}
 
-    {% endblock %}
+{% endblock %}

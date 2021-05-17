@@ -32,5 +32,6 @@ urlpatterns=[
 
     path('login/', vista_login, name="vista_login"),
     path('logout/', vista_logout, name="vista_logout"),
+    path('register/', vista_register, name="vista_register"),
 
     ]

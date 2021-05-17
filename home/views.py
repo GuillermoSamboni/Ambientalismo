@@ -160,3 +160,24 @@ def vista_login(request):
 def vista_logout(request):
     logout(request)
     return redirect('/login/')
+
+#registro user
+def vista_register(request):    
+    formulario=register_user_form()
+    usuario=''
+    correo=''
+    password_1=''
+    password_2=''
+    if request.method=='POST':
+        formulario=register_user_form(request.POST)
+        if formulario.is_valid():
+            usuario=formulario.cleaned_data['usuario']
+            correo= formulario.cleaned_data['correo']
+            password_1=formulario.cleaned_data['contraseña']
+            password_2=formulario.cleaned_data['confirmar']
+            u=User.objects.create_user(username=usuario, email=correo, password=password_1)
+            u.save()
+            return redirect('/login/')
+        else:
+            return render(request, 'register.html', locals())
+    return render(request,'register.html', locals())
